@@ -14,7 +14,7 @@ function App() {
     setOutput(null);
 
     try {
-      const res = await fetch('http://localhost:8000/analyze', {
+      const res = await fetch('https://cognition-backend.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ article: userText }),
