@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: cognition-backend
+    ports:
+      - "8000:8000"
+    networks:
+      - cognition-net
+    env_file:
+      - .env
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: cognition-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - cognition-net
+
+networks:
+  cognition-net:
+    driver: bridge
