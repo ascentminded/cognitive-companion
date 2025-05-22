@@ -32,7 +32,7 @@ app.add_exception_handler(RateLimitExceeded, lambda request, exc: HTTPException(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Change for prod
+    allow_origins=["http://localhost:3000", "https://your-app-name.onrender.com"],  # Change for prod
     allow_credentials=True,
     allow_methods=["POST"],
     allow_headers=["Content-Type"],
